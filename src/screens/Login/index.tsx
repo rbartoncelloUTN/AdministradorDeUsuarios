@@ -13,7 +13,6 @@ import loginLogo from '../../assets/images/logo.png';
 import {useSessionStore} from '../../state/session/slice.ts';
 import {useLogin} from '../../state/session/actions.tsx';
 import {users} from '../../constans/users.ts';
-import BooleanButtons from '../../components/BooleanButtons';
 import {SpeedDial} from '@rneui/themed';
 import {
   UserAccountIcon,
@@ -50,9 +49,8 @@ const Login: FC<LoginProps> = () => {
     id: number,
   ) => {
     const user = users[id - 1];
-    console.log(id, user.id, user.email);
     await setFieldValue('username', user.email, false);
-    await setFieldValue('password', `${user.password}`, false);:
+    await setFieldValue('password', `${user.password}`, false);
   };
 
   const usernameRef = useRef();
